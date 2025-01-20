@@ -1,6 +1,6 @@
 [project]
 name = "nuni-eda"
-version = "0.3.1"
+version = "0.3.2"
 description = "Default template for PDM package"
 authors = [
     {name = "nunininu", email = "sgcho0907@gmail.com"},
@@ -28,3 +28,7 @@ eda = [
 
 [project.scripts]
 nuni-eda = "nuni_eda.cli:group_by_count"
+
+[project.urls]
+Homepage = "https://github.com/nunininu/nuni-eda"
+Issues = "https://github.com/nunininu/nuni-eda/issues"
