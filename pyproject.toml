@@ -1,6 +1,6 @@
 [project]
 name = "nuni-eda"
-version = "0.1.0"
+version = "0.3.0"
 description = "Default template for PDM package"
 authors = [
     {name = "nunininu", email = "sgcho0907@gmail.com"},
@@ -25,3 +25,6 @@ test = [
 eda = [
     "jupyterlab>=4.3.4",
 ]
+
+[project.scripts]
+nuni-eda = "nuni_eda.cli:group_by_count"
