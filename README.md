@@ -36,13 +36,3 @@ $ pip install nuni-eda
 $ nuni-eda
 
 ```
-
-### REF
-
-[project.urls]
-Homepage = "https://github.com/nunininu/nunininu-check-os-ver"
-Issues = "https://github.com/nunininu/nunininu-check-os-ver/issues"
-
-[project.scripts]
-nuni-eda = "nuni_eda.cli:group_by_count"
-
