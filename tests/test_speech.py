@@ -1,4 +1,4 @@
-from eda_bam.cli import group_by_count
+from nuni-eda.cli import group_by_count
 import pandas as pd
 
 def test_search_exception():
