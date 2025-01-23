@@ -34,14 +34,13 @@ def group_by_count(keyword:str, asc: bool = False, rcnt: int = 12, keyword_sum: 
     df = pd.read_parquet(data_path)
     fdf = df[df['speech_text'].str.contains(keyword, case=False)]
 
-    if(keyword_sum):
-       # fdf['keyword_sum']
-       pass
-
     gdf = fdf.groupby("president").size().reset_index(name="count")
     sdf = gdf.sort_values(by='count', ascending=asc).reset_index(drop=True)
-    rdf = sdf.head(rcnt)
-    rdf['keyword_sum'] = '사표는 책상위에 두었습니다'
+    rdf = sdf.head(rcnt).copy()
+    
+    if(keyword_sum):
+        rdf['keyword_sum'] = '사표는 책상위에 두었습니다'
+    
     return rdf
 
 def print_group_by_count(keyword: str, asc: bool=False, rcnt: int=12):

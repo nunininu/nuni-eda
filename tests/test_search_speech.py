@@ -111,11 +111,11 @@ def test_all_count_keyword_sum():
     # global dict
 
     # when
-    df = group_by_count(keyword="자유")
+    df = group_by_count(keyword="자유", keyword_sum=True)
 
     #then
     assert isinstance(df, pd.DataFrame)
-    #assert "keyword_sum" in df.columns
+    assert "keyword_sum" in df.columns
 
    ###TRY### 
     # count보다 keyword_sum이 크거나 같음을 확인 assert
