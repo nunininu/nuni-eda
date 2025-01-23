@@ -1,8 +1,6 @@
 from nuni_eda.cli import group_by_count
 import pandas as pd
 
-
-
 def test_search_exception():
     row_count = 13
     df = group_by_count(keyword="자유", asc=True, rcnt=row_count)
