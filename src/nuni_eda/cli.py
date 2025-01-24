@@ -1,6 +1,6 @@
 from president_speech.db.parquet_interpreter import read_parquet, get_parquet_full_path
 import pandas as pd
-
+import typer
 
 def add_keyword_count(df: pd.DataFrame, keyword: str) -> pd.DataFrame:
     """
