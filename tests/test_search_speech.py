@@ -1,6 +1,6 @@
 from nuni_eda.cli import group_by_count
 import pandas as pd
-import pytest
+import pytest 
 
 presidents_speeches = {                                                                                    "박정희": 513,                                                                                         "이승만": 438,                                                                                         "노태우": 399,
     "김대중": 305,
@@ -119,4 +119,31 @@ def test_all_count_keyword_sum():
 
    ###TRY### 
     # count보다 keyword_sum이 크거나 같음을 확인 assert
+
+    # TRY - keyword_sum 이 count 보다 항상 크거나 같음
+    # 1
+    #assert all(df["keyword_sum"] >= df["count"])
+    
+    # 2
+    for row in df.itertuples():
+        assert row.keyword_sum >= row.count
+
+    # 3 - 열의 순서를 알고 있고 위치 기반으로 다루고 싶을 때.
+    for i in range(len(df)):
+        keyword_sum = df.iloc[i, df.columns.get_loc("keyword_sum")]
+        count = df.iloc[i, df.columns.get_loc("count")]
+        assert keyword_sum >= count
+
+    # 4
+    for i in range(len(df)):
+        keyword_sum = df.loc[i, "keyword_sum"]
+        count = df.loc[i, "count"]
+        assert keyword_sum >= count
+
+    # 5
+    for i in range(len(df)):
+        keyword_sum = df.iat[i, 2]  # 첫 번째 열 (0번 인덱스)
+        count = df.iat[i, 1]        # 두 번째 열 (1번 인덱스)
+        assert keyword_sum >= count
+
 
