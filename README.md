@@ -37,8 +37,8 @@ $ git clone
 
 # pdm venv create (at different delvelopment environment)
 $ source .venv/bin/activate
-$ pdm install pandas
-$ pdm install jupyter lab
+$ pdm add pandas
+$ pdm add jupyter lab
 $ jupyter lab
 ...(coding)
 
